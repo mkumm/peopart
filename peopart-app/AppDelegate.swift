@@ -21,6 +21,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // TODO: create a `UITabBarController`
     // TODO: create a `UIWindow` based on the `main` `UIScreen` `frame`
     // TODO: make the `UIWindow` key and visible
+    let usersTableViewController = UsersTableViewController()
+    let userNavigationController = UINavigationController(rootViewController: usersTableViewController)
+    userNavigationController.tabBarItem.title = "Users"
+    userNavigationController.tabBarItem.image = UIImage(named: "User")
+    let tabBarController = UITabBarController()
+    tabBarController.setViewControllers([userNavigationController], animated: false)
+    let window = UIWindow(frame: UIScreen.main.bounds)
+    
+
+    window.makeKeyAndVisible()
+    window.rootViewController = tabBarController
+    self.window = window
+    
     
     return true
   }
